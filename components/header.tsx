@@ -88,29 +88,31 @@ export default function Header() {
                 )}
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:max-w-none">
-              <div className="mt-6 flow-root">
-                <div className="-my-6 divide-y divide-gray-500/10">
+
+            {/* Changed: ensure SheetContent fills height and the inner wrapper scrolls */}
+            <SheetContent side="right" className="w-[300px] sm:max-w-none h-full max-h-screen">
+              <div className="h-full overflow-y-auto py-6">
+                <div className="divide-y divide-gray-500/10">
                   {navigation.map((item) => (
-                    <div key={item.name} className="py-6">
+                    <div key={item.name} className="py-6 px-3">
                       {item.href ? (
                         <Link
                           href={item.href}
                           onClick={() => setIsOpen(false)}
-                          className="block px-3 py-2 text-base font-semibold"
+                          className="block text-base font-semibold"
                         >
                           {item.name}
                         </Link>
                       ) : (
                         <>
-                          <div className="px-3 py-2 text-base font-semibold">{item.name}</div>
-                          <div className="ml-4 space-y-2">
+                          <div className="text-base font-semibold">{item.name}</div>
+                          <div className="mt-2 space-y-2">
                             {item.items?.map((subItem) => (
                               <Link
                                 key={subItem.name}
                                 href={subItem.href}
                                 onClick={() => setIsOpen(false)}
-                                className="block px-3 py-2 text-sm"
+                                className="block text-sm"
                               >
                                 {subItem.name}
                               </Link>
