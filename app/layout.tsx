@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: 'DARIUS Pharmaceuticals - Upholding the Good in Health | Best Pharma In Aurangabad Bihar',
   description: 'DARIUS Pharmaceuticals is a leading pharmaceutical company providing innovative solutions for bacterial infections, neuropathy & bone health.',
   icons: {
-    icon: "/logos/darius-crop-logo.webp"
+    icon: "/logos/Darius%20Logo%20crop.png"
   }
 }
 
